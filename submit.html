@@ -11,9 +11,9 @@
 <body>
     <header>
         <div class="container header-content">
-            <div class="logo">The Scribe Gallery</div>
+            <div class="logo"><a href="https://gallery.apollo-press.com">The Scribe Gallery</a></div>
             <nav class="nav-links">
-                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="https://gallery.apollo-press.com/"><i class="fas fa-home"></i> Home</a>
                 <a href="collection.html"><i class="fas fa-images"></i> Collection</a>
                 <a href="submit.html"><i class="fas fa-user-artist"></i> Submit Portfolio</a>
                 <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
@@ -26,31 +26,37 @@
             <h1>Submit Your Portfolio</h1>
             <p class="form-intro">Share your artwork with The Scribe community. Simply provide your portfolio link and basic information.</p>
             
-            <form id="portfolioForm" class="portfolio-form">
+            <form id="portfolioForm" class="portfolio-form" name="portfolio-submission" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                <p class="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                
+                <input type="hidden" name="form-name" value="portfolio-submission" />
+                
                 <div class="form-group">
                     <label for="artistName">Full Name</label>
-                    <input type="text" id="artistName" required>
+                    <input type="text" id="artistName" name="artistName" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="portfolioUrl">Portfolio URL</label>
-                    <input type="url" id="portfolioUrl" required>
+                    <input type="url" id="portfolioUrl" name="portfolioUrl" required>
                     <small>Supported platforms: Personal website, ArtStation, Behance, Instagram</small>
                 </div>
 
                 <div class="form-group">
                     <label for="artistStatement">Artist Statement (Optional)</label>
-                    <textarea id="artistStatement" rows="4"></textarea>
+                    <textarea id="artistStatement" name="artistStatement" rows="4"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="artType">Primary Art Type</label>
-                    <select id="artType" required>
+                    <select id="artType" name="artType" required>
                         <option value="">Select art type...</option>
                         <option value="painting">Painting</option>
                         <option value="photography">Photography</option>
@@ -63,12 +69,17 @@
 
                 <div class="form-group">
                     <label>
-                        <input type="checkbox" id="termsAccepted" required>
+                        <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
                         I agree to The Scribe Gallery's terms and conditions
                     </label>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit Portfolio</button>
+
+                <!-- Success message container -->
+                <div id="formSuccess" class="form-success hidden">
+                    Thank you for submitting your portfolio! We will review it shortly.
+                </div>
             </form>
         </div>
     </main>

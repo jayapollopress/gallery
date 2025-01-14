@@ -1,4 +1,3 @@
-/* artwork.js - Enhanced artwork interaction */
 document.addEventListener('DOMContentLoaded', () => {
     const artworkCards = document.querySelectorAll('.artwork-card');
     

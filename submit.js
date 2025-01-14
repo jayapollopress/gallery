@@ -1,4 +1,3 @@
-/* submit.js - Form handling and validation */
 document.addEventListener('DOMContentLoaded', () => {
     const portfolioForm = document.getElementById('portfolioForm');
     
@@ -22,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Here you would typically send the data to your backend
-        // For now, we'll just show a success message
         alert('Thank you for submitting your portfolio! We will review it shortly.');
         portfolioForm.reset();
     });
