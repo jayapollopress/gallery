@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Scribe Gallery - Apollo Press</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A4B7C;
+            --secondary-color: #577BC1;
+            --accent-color: #FFB347;
+            --text-color: #2C3E50;
+            --background-light: #F8FAFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .featured-artwork {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .artwork-info {
+            padding: 2rem;
+        }
+
+        .artwork-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .artist-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .artist-name {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .artwork-statement {
+            font-style: italic;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: var(--background-light);
+            border-radius: 8px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .view-all {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .artwork-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .artwork-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .artwork-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-artist {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .featured-image {
+                height: 300px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .artwork-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">The Gallery</div>
+            <nav class="nav-links">
+                <a href="#"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-images"></i> Collection</a>
+                <a href="#"><i class="fas fa-user-artist"></i> Submit Portfolio</a>
+                <a href="#"><i class="fas fa-info-circle"></i> About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="featured-artwork">
+            <img src="https://picsum.photos/1200/500" alt="Featured Artwork" class="featured-image">
+            
+            <div class="artwork-info">
+                <h1 class="artwork-title">Summer Evening on the Scioto</h1>
+                
+                <div class="artist-info">
+                    <span class="artist-name">by Maria Chen</span>
+                    <span>Acrylic on Canvas, 2024</span>
+                </div>
+
+                <div class="artwork-statement">
+                    "This piece captures the vibrant energy of Columbus during golden hour, 
+                    when the Scioto River reflects the city's lights and the sky transforms 
+                    into a canvas of warm colors."
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="section-title">
+            <span>Recent Submissions</span>
+            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="artwork-grid">
+            
+            <div class="artwork-card">
+                <img src="https://picsum.photos/400/500" alt="Artwork 1">
+                <div class="card-info">
+                    <h3 class="card-title">Urban Reflections</h3>
+                    <p class="card-artist">by James Wilson</p>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/401/500" alt="Artwork 2">
+                <div class="card-info">
+                    <h3 class="card-title">Lake Erie Dawn</h3>
+                    <p class="card-artist">by Sarah Miller</p>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/402/500" alt="Artwork 3">
+                <div class="card-info">
+                    <h3 class="card-title">Downtown Dreams</h3>
+                    <p class="card-artist">by David Park</p>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/403/500" alt="Artwork 4">
+                <div class="card-info">
+                    <h3 class="card-title">Autumn in Athens</h3>
+                    <p class="card-artist">by Emma Thompson</p>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/404/500" alt="Artwork 5">
+                <div class="card-info">
+                    <h3 class="card-title">Cincinnati Nights</h3>
+                    <p class="card-artist">by Michael Lee</p>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/405/500" alt="Artwork 6">
+                <div class="card-info">
+                    <h3 class="card-title">Hocking Hills Sunset</h3>
+                    <p class="card-artist">by Rachel Green</p>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/406/500" alt="Artwork 7">
+                <div class="card-info">
+                    <h3 class="card-title">Toledo Industrial</h3>
+                    <p class="card-artist">by Chris Martinez</p>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/407/500" alt="Artwork 8">
+                <div class="card-info">
+                    <h3 class="card-title">Rural Ohio</h3>
+                    <p class="card-artist">by Jessica Brown</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        
+        document.querySelectorAll('.artwork-card').forEach(card => {
+            card.addEventListener('click', () => {
+                
+                console.log('Artwork clicked:', card.querySelector('.card-title').textContent);
+            });
+        });
+    </script>
+</body>
+</html>
