@@ -7,6 +7,8 @@
     <title>Submit Portfolio - The Scribe Gallery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    
 </head>
 <body>
     <header>
@@ -26,13 +28,8 @@
             <h1>Submit Your Portfolio</h1>
             <p class="form-intro">Share your artwork with The Scribe community. Simply provide your portfolio link and basic information.</p>
             
-            <form id="portfolioForm" class="portfolio-form" name="portfolio-submission" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-                <p class="hidden">
-                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                </p>
-                
-                <input type="hidden" name="form-name" value="portfolio-submission" />
-                
+            <form class="portfolio-form" action="https://formsubmit.co/submit@apollo-press.com" method="POST">
+
                 <div class="form-group">
                     <label for="artistName">Full Name</label>
                     <input type="text" id="artistName" name="artistName" required>
