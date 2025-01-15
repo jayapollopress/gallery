@@ -5,6 +5,11 @@
     --text-color: #2C3E50;
     --background-light: #F8FAFC;
 }
+
+.logotext {
+    text-decoration: none;
+    color: var(--primary-color);
+}
 .submission-form {
     max-width: 800px;
     margin: 2rem auto;
