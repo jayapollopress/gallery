@@ -1,0 +1,12 @@
+{
+    "artists": [
+        {
+            "name": "Jane Smith",
+            "portfolio": "https://apollo-press.com/"
+        },
+        {
+            "name": "John Doe",
+            "portfolio": "https://google.com/"
+        }
+    ]
+}
