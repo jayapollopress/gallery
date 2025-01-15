@@ -6,4 +6,98 @@
     <title>The Scribe Gallery Collection - Apollo Press</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .artist-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .artist-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: #333;
+            font-size: 1.25rem;
+        }
+
+        .artist-card p {
+            margin: 0;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .artist-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .collections-grid {
+                padding: 1rem;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
+<body>
+    <main>
+        <div class="collections-grid" id="artistGrid">
+            
+        </div>
+    </main>
+
+    <script>
+        async function loadArtists() {
+            try {
+                const response = await fetch('artists.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load artists data');
+                }
+                const artists = await response.json();
+                displayArtists(artists);
+            } catch (error) {
+                console.error('Error loading artists:', error);
+                document.getElementById('artistGrid').innerHTML = 
+                    '<p>Sorry, we couldn\'t load the artists at this time. Please try again later.</p>';
+            }
+        }
+
+        function displayArtists(artists) {
+            const grid = document.getElementById('artistGrid');
+            
+            artists.forEach(artist => {
+                const card = document.createElement('article');
+                card.className = 'artist-card';
+                
+                const link = document.createElement('a');
+                link.href = artist.portfolio_url;
+                link.className = 'artist-link';
+                
+                link.innerHTML = `
+                    <h3>${artist.name}</h3>
+                    <p>@${artist.username}</p>
+                `;
+                
+                card.appendChild(link);
+                grid.appendChild(card);
+            });
+        }
+
+        // Load artists when the page loads
+        document.addEventListener('DOMContentLoaded', loadArtists);
+    </script>
+</body>
+</html>

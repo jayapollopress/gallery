@@ -3,12 +3,12 @@
         {
             "name": "Jane Smith",
             "username": "janesmith",
-            "portfolio": "https://gallery.apollo-press.com/p/janesmith.html"
+            "portfolio_url": "https://gallery.apollo-press.com/p/janesmith.html"
         },
         {
             "name": "John Doe",
             "username": "johndoe",
-            "portfolio": "https://gallery.apollo-press.com/p/johndoe.html"
+            "portfolio_url": "https://gallery.apollo-press.com/p/johndoe.html"
         }
     ]
 }
