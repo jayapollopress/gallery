@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Scribe Gallery - Apollo Press</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><a href="https://gallery.apollo-press.com">The Scribe Gallery</a></div>
+            <nav class="nav-links">
+                <a href="https://gallery.apollo-press.com/"><i class="fas fa-home"></i> Home</a>
+                <a href="collection.html"><i class="fas fa-images"></i> Collection</a>
+                <a href="submit.html"><i class="fas fa-user-artist"></i> Submit Portfolio</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search artists by name..." aria-label="Search artists">
+                    <div id="search-results"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="featured-artwork">
+            <img src="https://picsum.photos/1200/500" alt="Featured Artwork" class="featured-image">
+            
+            <div class="artwork-info">
+                <h1 class="artwork-title">Summer Evening on the Scioto</h1>
+                
+                <div class="artist-info">
+                    <span class="artist-name">by Jane Smith</span>
+                    <span>Oil on Canvas, 2024</span>
+                </div>
+
+                <div class="artwork-statement">
+                    "This piece captures the vibrant energy of Columbus during golden hour, 
+                    when the Scioto River reflects the city's lights and the sky transforms 
+                    into a canvas of warm colors."
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="section-title">
+            <span>Recent Submissions</span>
+            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="artwork-grid">
+            
+            <div class="artwork-card">
+                <img src="https://picsum.photos/400/500" alt="Artwork 1">
+                <div class="card-info">
+                    <h3 class="card-title">Urban Reflections</h3>
+                    
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/401/500" alt="Artwork 2">
+                <div class="card-info">
+                    <h3 class="card-title">Lake Erie Dawn</h3>
+                    
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/402/500" alt="Artwork 3">
+                <div class="card-info">
+                    <h3 class="card-title">Downtown Dreams</h3>
+                    
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/403/500" alt="Artwork 4">
+                <div class="card-info">
+                    <h3 class="card-title">Autumn in Athens</h3>
+                    
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/404/500" alt="Artwork 5">
+                <div class="card-info">
+                    <h3 class="card-title">Cincinnati Nights</h3>
+                    
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/405/500" alt="Artwork 6">
+                <div class="card-info">
+                    <h3 class="card-title">Hocking Hills Sunset</h3>
+                    
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/406/500" alt="Artwork 7">
+                <div class="card-info">
+                    <h3 class="card-title">Toledo Industrial</h3>
+                    
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <img src="https://picsum.photos/407/500" alt="Artwork 8">
+                <div class="card-info">
+                    <h3 class="card-title">Rural Ohio</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        
+        document.querySelectorAll('.artwork-card').forEach(card => {
+            card.addEventListener('click', () => {
+                
+                console.log('Artwork clicked:', card.querySelector('.card-title').textContent);
+            });
+        });
+    </script>
+
+<script src="search.js"></script>
+</body>
+</html>
