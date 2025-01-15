@@ -19,6 +19,10 @@
                 <a href="collection.html"><i class="fas fa-images"></i> Collection</a>
                 <a href="submit.html"><i class="fas fa-user-artist"></i> Submit Portfolio</a>
                 <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search artists by name..." aria-label="Search artists">
+                    <div id="search-results"></div>
+                </div>
             </nav>
         </div>
     </header>
@@ -26,11 +30,10 @@
     <main class="container">
         <div class="submission-form">
             <h1>Submit Your Portfolio</h1>
-            <p class="form-intro">Share your artwork with The Scribe community. Simply provide your portfolio link and basic information.</p>
+            <p class="form-intro">Share your artwork with The Scribe community. Simply provide your portfolio link and basic information. By submitting you agree that your art is family friendly and that it will be public. You grant us the right to display your artwork with full attribution.</p>
             
             <form class="portfolio-form" action="https://formsubmit.co/6dd2b03a9aba9edb0715725a381152c4" method="POST">
                 <input type="hidden" name="_next" value="https://gallery.apollo-press.com/thanks.html">
-                
                 <input type="text" name="_honey" style="display:none">
                 <div class="form-group">
                     <label for="artistName">Full Name</label>
@@ -50,7 +53,7 @@
 
                 <div class="form-group">
                     <label for="artistStatement">Artist Bio (Optional)</label>
-                    <textarea id="artistStatement" name="artistStatement" rows="4"></textarea>
+                    <textarea id="artistStatement" name="artistStatement" rows="4" placeholder="Tell us about yourself..."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -77,7 +80,7 @@
 
                 <!-- Success message container -->
                 <div id="formSuccess" class="form-success hidden">
-                    Thank you for submitting your portfolio! We will review it shortly.
+                    Thank you for submitting your portfolio! Portfolios are manually approved.
                 </div>
             </form>
         </div>
