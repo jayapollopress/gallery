@@ -2,11 +2,13 @@
     "artists": [
         {
             "name": "Jane Smith",
-            "portfolio": "https://apollo-press.com/"
+            "username": "janesmith",
+            "portfolio": "https://gallery.apollo-press.com/janesmith.html"
         },
         {
             "name": "John Doe",
-            "portfolio": "https://google.com/"
+            "username": "johndoe",
+            "portfolio": "https://gallery.apollo-press.com/johndoe.html"
         }
     ]
 }
