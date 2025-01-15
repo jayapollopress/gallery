@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         artistData.forEach(artist => {
             if (artist.name.toLowerCase().includes(query)) {
                 const link = document.createElement('a');
-                link.href = artist.portfolio;
+                link.href = artist.portfolio_url;
                 link.className = 'search-result';
                 link.textContent = artist.name;
                 resultsContainer.appendChild(link);
